@@ -3,7 +3,7 @@ module EzAllpay
     module Keygen
 
       def create_calculate_check_mac_key
-        add_check_key("HashKey=" + EzAllpay.api_hash_key + "&" + render_hash_params_to_request(EzAllpay.item_options) + "&HashIV=" + EzAllpay.api_hash_iv).upcase
+        add_check_key("HashKey=" + EzAllpay.hash_key + "&" + render_hash_params_to_request(EzAllpay.item_options) + "&HashIV=" + EzAllpay.hash_iv).upcase
       end
 
       def render_hash_params_to_request(key)

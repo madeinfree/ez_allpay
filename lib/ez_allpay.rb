@@ -17,15 +17,23 @@ require "ez_allpay/generater/ez_allpay_generater"
 
 module EzAllpay
 
+  autoload :Keygen, "ez_allpay/helper/keygen"
+
+  mattr_accessor :merchant_id
+  mattr_accessor :hash_key 
+  mattr_accessor :hash_iv
+
   @api_base_url = "http://payment-stage.allpay.com.tw/Cashier/AioCheckOut"
-  @api_hash_key = "5294y06JbISpM5x9"
-  @api_hash_iv = "v77hoKGq4kWxNNIS"
 
   class << self
-    attr_accessor :api_base_url, :api_hash_key, :api_hash_iv
+    attr_accessor :api_base_url, :integration_mode
   end
 
   mattr_accessor :item_options
   @@item_options = {}
+
+  def self.setup
+    yield(self)
+  end
 
 end
