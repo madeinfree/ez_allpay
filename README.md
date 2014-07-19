@@ -12,6 +12,7 @@
       * ☐ 預設好官方環境 merchant_id: 2000132,  hash_key: 5294y06JbISpM5x9, hash_iv: v77hoKGq4kWxNNIS
   * ☐ 使用者資料庫格式
   * ☐ 使用文件（Usage Document）
+  * ☐ 開發者文件（Developer Document）
 
 # 完成度
 note: 此RubyGem目前為測試開發用大略完成約一半，目前是支援測試環境的狀態，尚未傳至RubyGem請先在git中下載，歡迎大家幫忙一起fork修改此專案，多給予PR。
@@ -58,14 +59,6 @@ end
 
 ```
 
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/ez_allpay/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
 ## 開發者筆記
 
 ez_allpay_for.rb「Usage」
@@ -75,7 +68,7 @@ ez_allpay_for.rb「Usage」
 # ex: @product = Product.find(1)
 # <%= ez_allpay_for @product %>
 
-def ez_allpay_for(record) 
+ez_allpay_for(record) 呼叫方法
 ```
 
 tag_creater.rb「建構表單方法」
@@ -101,3 +94,11 @@ ez_allpay/generater/ez_allpay_generater.rb
 initialize_generater # 初始化
 create_action # 起始點
 ```
+
+## Contributing
+
+1. Fork it ( https://github.com/[my-github-username]/ez_allpay/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
