@@ -68,7 +68,7 @@ ez_allpay_for.rb「Usage」
 # ex: @product = Product.find(1)
 # <%= ez_allpay_for @product %>
 
-ez_allpay_for(record) 呼叫方法
+ez_allpay_for(record) #呼叫方法
 ```
 
 tag_creater.rb「建構表單方法」
