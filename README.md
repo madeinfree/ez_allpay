@@ -1,19 +1,8 @@
 # EzAllpay
 
-TODO: Write a gem description
-
-*/******************************************************/
-  * 名稱：ez_allpay
-  * 作者：Whien
-  * 信箱：sal95610@gmail.com
-  * 簡介：方便快速串接AllPay<歐付寶>金流系統
-  * license：MIT
-  * GitHub: https://github.com/madeinfree/ez_allpay
-  * 最後修改日期：2014/07/19
-*/******************************************************/
-=======
+=====
 預計完成
-=======
+=====
   * ☐ 自動串接歐付寶金流
     * ☐ 必須串接正式與測試網址
     * ✔ 1. 開發環境：http://vendor-stage.allpay.com.tw/Frame/Index @done (14-07-19 16:45)
