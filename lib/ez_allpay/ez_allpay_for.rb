@@ -15,6 +15,7 @@ module EzAllpay
       EzAllpay::EzAllpayFor.record_options = record
       EzAllpay.item_options[:MerchantID] = EzAllpay.merchant_id
       EzAllpay.item_options[:ReturnURL] = EzAllpay.return_url
+      EzAllpay.item_options[:ChoosePayment] = EzAllpay.choose_payment
 
       yield
 
@@ -40,8 +41,6 @@ module EzAllpay
             EzAllpay.item_options[key] = EzAllpay::EzAllpayFor.record_options[key_instead].strftime("%Y/%m/%d %H:%M:%S")
           when :PaymentType
             EzAllpay.item_options[key] = "aio"
-          when :ChoosePayment
-            EzAllpay.item_options[key] = "CVS"
           else
             case key_instead
               when key_instead.nil?
