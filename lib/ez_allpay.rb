@@ -1,4 +1,4 @@
-#outerfile
+#Outerfile
 require 'action_view'
 
 #Version
@@ -8,29 +8,37 @@ require "ez_allpay/version"
 require "ez_allpay/helper/keygen"
 
 #Resources
-require "ez_allpay/util"
 require "ez_allpay/tag_creater"
 require "ez_allpay/ez_allpay_for"
 
-#Generater
-require "ez_allpay/generater/ez_allpay_generater"
-
 module EzAllpay
 
-  autoload :Keygen, "ez_allpay/helper/keygen"
-
+  #
+  mattr_accessor :service_url
   mattr_accessor :merchant_id
   mattr_accessor :hash_key 
   mattr_accessor :hash_iv
+  mattr_accessor :return_url
 
-  @api_base_url = "http://payment-stage.allpay.com.tw/Cashier/AioCheckOut"
-
-  class << self
-    attr_accessor :api_base_url, :integration_mode
-  end
-
+  #
   mattr_accessor :item_options
   @@item_options = {}
+
+  class << self
+    attr_accessor :integration_mode
+  end
+
+  def self.service_url
+    mode = EzAllpay.integration_mode
+    case mode
+      when :development
+        "http://payment-stage.allpay.com.tw/Cashier/AioCheckOut"
+      when :production
+        "https://payment.allpay.com.tw/Cashier/AioCheckOut"
+      else
+        raise StandardError, "Integration mode set to an invalid value: #{mode}"
+    end
+  end
 
   def self.setup
     yield(self)

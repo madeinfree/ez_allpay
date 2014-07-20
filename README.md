@@ -13,6 +13,10 @@
   * ☐ 使用者資料庫格式
   * ☐ 使用文件（Usage Document）
 
+# 目前進度
+---
+  尚未開發完成。
+---
 
 Add this line to your application's Gemfile:
 
