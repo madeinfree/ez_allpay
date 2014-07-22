@@ -1,4 +1,3 @@
-require "ez_allpay/helper/keygen"
 module EzAllpay
   module TagCreater
 
@@ -6,7 +5,7 @@ module EzAllpay
     include EzAllpay::Helper::Keygen
 
     def tag_form_create
-      "<form action=#{EzAllpay.api_base_url} method=\"post\">"
+      "<form action=#{EzAllpay.service_url} method=\"post\" target=\"_blank\">"
     end
 
     def tag_params_adder(record_attrs)
@@ -24,7 +23,7 @@ module EzAllpay
     end
 
     def submit_tag_adder
-      "<input type=\"submit\" value\"結賬\" />"
+      "<input class=\"#{EzAllpay::EzAllpayFor.button_style}\" type=\"submit\" value=\"#{EzAllpay::EzAllpayFor.button_value}\" \/>"
     end
 
   end

@@ -10,6 +10,7 @@ module EzAllpay
         result = key.to_a.sort.map do |key, value|
           "#{key}=#{value}"
         end
+
         result.join("&")
       end
 
