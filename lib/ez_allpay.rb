@@ -20,7 +20,7 @@ module EzAllpay
   mattr_accessor :hash_iv
   mattr_accessor :return_url
   mattr_accessor :choose_payment
-
+  
   #
   mattr_accessor :item_options
   @@item_options = {}
