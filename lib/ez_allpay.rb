@@ -7,6 +7,9 @@ require "ez_allpay/version"
 #Helper
 require "ez_allpay/helper/keygen"
 
+#Factors
+require "ez_allpay/factors/records_factor"
+
 #Resources
 require "ez_allpay/tag_creater"
 require "ez_allpay/ez_allpay_for"
@@ -20,7 +23,7 @@ module EzAllpay
   mattr_accessor :hash_iv
   mattr_accessor :return_url
   mattr_accessor :choose_payment
-  
+
   #
   mattr_accessor :item_options
   @@item_options = {}
