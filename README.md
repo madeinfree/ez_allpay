@@ -1,8 +1,5 @@
 # EzAllpay
 
-<<<<<<< HEAD
-Add this line to your application's Gemfile:
-=======
 =====
 預計完成
 =====
@@ -21,7 +18,6 @@ Add this line to your application's Gemfile:
 note: 此RubyGem目前為測試開發用大略完成約一半，目前是支援測試環境的狀態，尚未傳至RubyGem請先在git中下載，歡迎大家幫忙一起fork修改此專案，多給予PR。
 
 請先從此git中下載：
->>>>>>> 411397416274d39b2eec36302952176d9d650d1b
 
     gem 'ez_allpay' :git => 'git://github.com/madeinfree/ez_allpay.git
 
@@ -35,19 +31,16 @@ note: 此RubyGem目前為測試開發用大略完成約一半，目前是支援�
 
 ## Usage
 
-<<<<<<< HEAD
 ```ruby
 # config/initializers/ez_allpay.rb
 =======
 ``` ruby
 # 此檔案請新增在config/initializers/ez_allpay.rb
->>>>>>> 411397416274d39b2eec36302952176d9d650d1b
 EzAllpay.setup do |allpay|
   if Rails.env.development?
     allpay.merchant_id = '2000132'
     allpay.hash_key    = '5294y06JbISpM5x9'
     allpay.hash_iv     = 'v77hoKGq4kWxNNIS'
-<<<<<<< HEAD
     allpay.return_url = 'write your production return_url'
   else
     allpay.merchant_id = 'write your production merchant_id'
@@ -64,11 +57,9 @@ EzAllpay.setup do |allpay|
 end
 ```
 
-<<<<<<< HEAD
 ```ruby
 =======
 ``` ruby
->>>>>>> 411397416274d39b2eec36302952176d9d650d1b
 # config/environments/development.rb
 config.after_initialize do
   EzAllpay.integration_mode = :development
@@ -78,7 +69,6 @@ end
 config.after_initialize do
   EzAllpay.integration_mode = :production
 end
-<<<<<<< HEAD
 ```
 
 ```ruby
@@ -143,7 +133,6 @@ ez_allpay/generater/ez_allpay_generater.rb
 ``` ruby
 initialize_generater # 初始化
 create_action # 起始點
->>>>>>> 411397416274d39b2eec36302952176d9d650d1b
 ```
 
 ## Contributing
