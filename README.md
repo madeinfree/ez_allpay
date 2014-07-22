@@ -49,6 +49,7 @@ end
   <% attr_instead :MerchantTradeNo => :bill_no %> # 廠商交易編號
   <% attr_instead :MerchantTradeDate => :created_at%> # 廠商交易時間
   <% attr_instead :PaymentType => "aio" %> # 交易類型, 預設為aio不更改
+  <% attr_instead :ChoosePayment => "SVC" %> #交易方式
   <% attr_instead :TotalAmount => :price %> # 交易金額
   <% attr_instead :TradeDesc => :description %> # 交易描述
   <% attr_instead :ItemName => :name %> # 商品名稱

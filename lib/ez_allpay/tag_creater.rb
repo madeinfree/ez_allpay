@@ -5,7 +5,7 @@ module EzAllpay
     include EzAllpay::Helper::Keygen
 
     def tag_form_create
-      "<form action=#{EzAllpay.service_url} method=\"post\">"
+      "<form action=#{EzAllpay.service_url} method=\"post\" target=\"_blank\">"
     end
 
     def tag_params_adder(record_attrs)

@@ -41,6 +41,8 @@ module EzAllpay
             EzAllpay.item_options[key] = EzAllpay::EzAllpayFor.record_options[key_instead].strftime("%Y/%m/%d %H:%M:%S")
           when :PaymentType
             EzAllpay.item_options[key] = "aio"
+          when :ChoosePayment
+            EzAllpay.item_options[key] = key_instead
           else
             case key_instead
               when key_instead.nil?
