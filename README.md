@@ -21,11 +21,13 @@ EzAllpay.setup do |allpay|
     allpay.merchant_id = '2000132'
     allpay.hash_key    = '5294y06JbISpM5x9'
     allpay.hash_iv     = 'v77hoKGq4kWxNNIS'
+    allpay.choose_payment = 'CVS'
     allpay.return_url = 'write your production return_url'
   else
     allpay.merchant_id = 'write your production merchant_id'
     allpay.hash_key    = 'write your production hash_key'
     allpay.hash_iv     = 'write your production hash_iv'
+    allpay.choose_payment = 'write your production payment type'
     allpay.return_url = 'write your production return_url'
   end
 end
@@ -45,8 +47,19 @@ end
 
 ```ruby
 # example
-<%= ez_allpay_for @product, :setting => { :value => "付款", :css => "btn btn-danger" } do %>
-  <% attr_instead :MerchantTradeNo => :bill_no %> # 廠商交易編號
+<%= ez_allpay_for @order, :setting => { :value => "付款", :css => "btn btn-danger" } do %>
+  <% attr_instead :MerchantTradeNo => :order_no %> # 廠商交易編號
+  <% attr_instead :MerchantTradeDate => :created_at%> # 廠商交易時間
+  <% attr_instead :PaymentType => "aio" %> # 交易類型, 預設為aio不更改
+  <% attr_instead :ChoosePayment => "SVC" %> #交易方式
+  <% attr_instead :TotalAmount => :price %> # 交易金額
+  <% attr_instead :TradeDesc => :description %> # 交易描述
+  <% attr_instead :ItemName => :name %> # 商品名稱
+<% end %>
+
+# example 2
+<%= ez_allpay_for [@order,@order_items], :setting => { :value => "付款", :css => "btn btn-danger" } do %>
+  <% attr_instead :MerchantTradeNo => :order_no %> # 廠商交易編號
   <% attr_instead :MerchantTradeDate => :created_at%> # 廠商交易時間
   <% attr_instead :PaymentType => "aio" %> # 交易類型, 預設為aio不更改
   <% attr_instead :ChoosePayment => "SVC" %> #交易方式
