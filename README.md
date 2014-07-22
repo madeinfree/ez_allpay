@@ -33,7 +33,7 @@ note: 此RubyGem目前為測試開發用大略完成約一半，目前是支援�
 
 ```ruby
 # config/initializers/ez_allpay.rb
-``` ruby
+```ruby
 # 此檔案請新增在config/initializers/ez_allpay.rb
 EzAllpay.setup do |allpay|
   if Rails.env.development?
