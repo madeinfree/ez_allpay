@@ -36,9 +36,9 @@ module EzAllpay
     mode = EzAllpay.integration_mode
     case mode
       when :development
-        "http://payment-stage.allpay.com.tw/Cashier/AioCheckOut"
+        %["http://payment-stage.allpay.com.tw/Cashier/AioCheckOut"]
       when :production
-        "https://payment.allpay.com.tw/Cashier/AioCheckOut"
+        %["https://payment.allpay.com.tw/Cashier/AioCheckOut"]
       else
         raise StandardError, "Integration mode set to an invalid value: #{mode}"
     end

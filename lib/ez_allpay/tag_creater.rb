@@ -5,13 +5,11 @@ module EzAllpay
     include EzAllpay::Helper::Keygen
 
     def tag_form_create
-      "<form action=#{EzAllpay.service_url} method=\"post\" target=\"_blank\">"
+      %["<form action=#{EzAllpay.service_url} method=\"post\" target=\"_blank\">"]
     end
 
     def tag_params_adder(record_attrs)
-      record_attrs.map do |key, value|
-          tag_adder key, value
-      end
+      record_attrs.map { |key, value| tag_adder key, value }
     end
 
     def tag_key_adder
@@ -23,7 +21,7 @@ module EzAllpay
     end
 
     def submit_tag_adder
-      "<input class=\"#{EzAllpay::EzAllpayFor.button_style}\" type=\"submit\" value=\"#{EzAllpay::EzAllpayFor.button_value}\" \/>"
+      %["<input class=\"#{EzAllpay::EzAllpayFor.button_style}\" type=\"submit\" value=\"#{EzAllpay::EzAllpayFor.button_value}\" \/>"]
     end
 
   end
