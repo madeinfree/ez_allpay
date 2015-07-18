@@ -22,11 +22,11 @@ module EzAllpay
 
       add_record_to_item_options(records)
 
-      create_action(EzAllpay.item_options)
+      create_action(EzAllpay.item_options.merge(default_settings))
     end
 
     def create_action(options)
-      form_body = tag_form_create
+      form_body = tag_form_create(options)
       form_tags = tag_params_adder(options)
       form_key_tag = tag_key_adder
       (form_body + form_tags.join("") + form_key_tag + submit_tag_adder).html_safe
