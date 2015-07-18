@@ -4,8 +4,9 @@ module EzAllpay
     include ActionView::Helpers::FormTagHelper
     include EzAllpay::Helper::Keygen
 
-    def tag_form_create
-      "<form action=#{EzAllpay.service_url} method=\"post\" target=\"_blank\">"
+    def tag_form_create(options = {})
+      "<form action=#{EzAllpay.service_url} method=\"post\""\
+      " #{'target=\"_blank\"' unless options[:setting][:open_in_same_tab]}>"
     end
 
     def tag_params_adder(record_attrs)
